@@ -1,0 +1,266 @@
+
+
+%% If you need to pass whatever options to xcolor
+\PassOptionsToPackage{dvipsnames}{xcolor}
+
+%% If you are using \orcid or academicons
+%% icons, make sure you have the academicons
+%% option here, and compile with XeLaTeX
+%% or LuaLaTeX.
+% \documentclass[10pt,a4paper,academicons]{altacv}
+
+%% Use the "normalphoto" option if you want a normal photo instead of cropped to a circle
+% \documentclass[10pt,a4paper,normalphoto]{altacv}
+
+%% Fork: CV dark mode toggle enabler to use a inverted color palette.
+%% Use the "darkmode" option if you want a color palette used to 
+% \documentclass[10pt,a4paper,darkmode]{altacv}
+
+\documentclass[10pt,a4paper,ragged2e,withhyper]{altacv}
+
+% Change the page layout if you need to
+\geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
+
+% The paracol package lets you typeset columns of text in parallel
+\usepackage{paracol}
+\usepackage{graphicx}
+\usepackage{caption}
+
+
+\usepackage[rm]{roboto}
+\usepackage[defaultsans]{lato}
+% \usepackage{sourcesanspro}
+\renewcommand{\familydefault}{\sfdefault}
+
+
+% Fork: Change the color codes to test your personal variant on any mode
+
+\definecolor{PrimaryColor}{HTML}{1A365D}   % 深蓝色，更专业
+\definecolor{SecondaryColor}{HTML}{2B6CB0} % 稍浅的蓝色
+\definecolor{ThirdColor}{HTML}{E2E8F0}     % 用于分隔线的浅灰色
+\definecolor{BodyColor}{HTML}{2D3748}      % 正文深灰色
+\definecolor{EmphasisColor}{HTML}{2C5282}  % 强调色
+\definecolor{BackgroundColor}{HTML}{FFFFFF} % 背景建议纯白，方便打印和ATS识别
+
+
+\colorlet{name}{PrimaryColor}
+\colorlet{tagline}{PrimaryColor}
+\colorlet{heading}{PrimaryColor}
+\colorlet{headingrule}{ThirdColor}
+\colorlet{subheading}{SecondaryColor}
+\colorlet{accent}{SecondaryColor}
+\colorlet{emphasis}{EmphasisColor}
+\colorlet{body}{BodyColor}
+\pagecolor{BackgroundColor}
+
+% Change some fonts, if necessary
+\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
+\renewcommand{\personalinfofont}{\small\bfseries}
+\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
+\renewcommand{\cvsubsectionfont}{\large\bfseries}
+
+
+
+% Change the bullets for itemize and rating marker
+% for \cvskill if you want to
+\renewcommand{\itemmarker}{{\small\textbullet}}
+\renewcommand{\ratingmarker}{\faCircle}
+
+%% sample.bib contains your publications
+%% \addbibresource{sample.bib}
+
+\begin{document}
+
+    \name{Xiaoying Sun}
+    \tagline{Software Engineer}
+    %% You can add multiple photos on the left or right
+    % \photoL{3cm}{xiao}
+    
+    \personalinfo{
+        \email{xiaoyingsun523@gmail.com}\smallskip
+        \phone{+31 685301165}
+        \smallskip \location{Amsterdam, Netherlands}\\
+        \linkedin{xiaoying-sun} \smallskip \github{SUN-Xiaoying} \dev{blog}
+        % \quad \dev{johnDoe}
+
+        %\homepage{nicolasomar.me}
+        %\medium{nicolasomar}
+        %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
+        % \orcid{0000-0000-0000-0000}
+        %% You can add your own arbtrary detail with
+        %% \printinfo{symbol}{detail}[optional hyperlink prefix]
+        % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
+        %% Or you can declare your own field with
+        %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+        % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
+        % \gitlab{your_id}
+    }
+
+    
+    \makecvheader
+    %% Depending on your tastes, you may want to make fonts of itemize environments slightly smaller
+    % \AtBeginEnvironment{itemize}{\small}
+    
+    %% Set the left/right column width ratio to 6:4.
+    \columnratio{0.3}
+
+    % % Start a 2-column paracol. Both the left and right columns will automatically
+    % % break across pages if things get too long.
+    \begin{paracol}{1}
+
+        % ----- LANGUAGES -----
+            
+    %     % ----- REFERENCES -----
+    %     \cvsection{References}
+    %         \cvref{Ref 1}{ref-1}
+    %         \divider
+            
+    %         \cvref{Ref 2}{ref-2}
+    %         \divider
+            
+    %         \cvref{Ref 3}{ref-3}
+    %         \smallskip
+    %     % ----- REFERENCES -----
+        
+        % ----- MOST PROUD -----
+        % \cvsection{Most Proud of}
+        
+        % \cvachievement{\faTrophy}{Fantastic Achievement}{and some details about it}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}\\
+        % \divider
+        % \cvachievement{\faHeartbeat}{Another achievement}{more details about it of course}
+        % ----- MOST PROUD -----
+        
+        % \cvsection{A Day of My Life}
+        
+        % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+        % \wheelchart{outer radius}{inner radius}{
+        % comma-separated list of value/text width/color/detail}
+        % \wheelchart{1.5cm}{0.5cm}{%
+        %   6/8em/accent!30/{Sleep,\\beautiful sleep},
+        %   3/8em/accent!40/Hopeful novelist by night,
+        %   8/8em/accent!60/Daytime job,
+        %   2/10em/accent/Sports and relaxation,
+        %   5/6em/accent!20/Spending time with family
+        % }
+        
+        % use ONLY \newpage if you want to force a page break for
+        % ONLY the current column
+        % \newpage
+        
+        %% Switch to the right column. This will now automatically move to the second
+        %% page if the content is too long.
+        % \switchcolumn
+        
+        % ----- ABOUT ME -----
+        \cvsection{Impact Focus}
+            \begin{quote}
+                Results-driven Software Engineer with 4+ years of experience building scalable distributed systems at Booking.com, Klarna, and Shell. AWS Certified Developer with expertise in Java, Python, and Cloud-native architectures.
+            \end{quote}
+        % ----- ABOUT ME -----
+        \divider
+        
+
+        % ----- SKILLS -----
+        
+        % ----- EXPERIENCE -----
+        \cvsection{Work Experience}
+        \cvevent{Software Engineer}{| \href{https://www.booking.com/}{Booking.com}}{Nov 2024 -- Present}{Amsterdam, Netherlands}
+            \begin{itemize}
+                \item \textbf{System Modernization \& Scalability}: Architected and deployed 3 scalable accommodation modification actions utilizing AWS Lambda, Step Functions, and CloudFormation to provide on-demand scalability.
+                \item \textbf{Service Health \& Reliability}: Enhanced system observability by developing Grafana and CloudWatch dashboards to track real-time system health and improve monitoring. Actively contributed to on call and managing system health for ARB services.
+                \item \textbf{Compliance \& Data Privacy}: Migrated 20 legacy MySQL queries to ReadAPI, ensureed full alignment with DMA compliance and decommissioning of legacy storage without impacting system uptime.
+                \item  AWS \cpshalf Java \cpshalf Perl  \cpshalf MySQL  \cpshalf Grafana \cpshalf DMA Compliance          \end{itemize}
+            \divider
+            
+            \cvevent{Site Reliability Engineer}{| \href{https://shellrecharge.com/en-gb}{Shell Recharge Solutions}}{June 2023 -- Oct 2024}{Amsterdam, Netherlands}
+            \begin{itemize}
+                \item \textbf{E2E Test Automation}: Engineered a comprehensive E2E automation testing program by integrating OCPP simulators, central management systems, and third-party APIs. This system validated critical payment flows across Mobile App, RFID, Credit Card, and QR code interfaces to ensure high system reliability.
+                \item \textbf{Payment Process Optimization}: Optimize the credit card payment process to dynamically initiate secondary charges when session costs exceeded the initial prepaid deposit. This logic prevented premature charging session terminations, significantly improving the customer experience and ensuring full revenue capture.
+                \item \textbf{Cross-Functional \& Field Leadership} Orchestrated technical requirements and problem-solving between EU and US engineering teams. Actively collaborated with on-site operations teams and conducted personal on-site hardware testing to bridge the gap between software performance and physical charger reliability.
+                \item  Python \cpshalf Scala \cpshalf AWS \cpshalf \href{https://www.openchargealliance.org/}{OCPP} \cpshalf Datadog \cpshalf ElasticSearch (Kibana)
+            \end{itemize}
+            \divider
+            
+            \cvevent{Backend Developer }{| \href{https://www.klarna.com/se/}{Klarna}}{June 2022 -- June 2023}{Stockholm, Sweden}
+            \begin{itemize}
+                \item \textbf{Revenue Protection}: Collaborated with Data Analysis team to engineer dynamic loan-term adjustment logic for high-risk accounts. Accelerated debt collection and significantly reduce credit loss.
+                \item \textbf{Financial System Integration}: Assisted a project integrating the Papaya third-party ledger service to accept affiliate loan requests, ensuring high data robustness and transactional integrity using AWS document storage.
+                \item \textbf{Klarna Graduate Program}: Actively participated in Graduate Program and company-wide learning events.
+                \item Java 17 \cpshalf Spring Boot \cpshalf AWS Document Storage \cpshalf Kafka \cpshalf Junit 5
+            \end{itemize}
+            \divider
+            
+            \cvevent{{Thesis Worker }}{| \href{https://www.scania.com/}{Scania}}{January 2022 -- June 2022}{Södertälje, Sweden}
+            \begin{itemize}
+            
+                \item Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1707576/FULLTEXT01.pdf}{Developed a cloud-native Smart Charging Management System (CPMS)}.
+                \item Engineered cost-optimization algorithms by integrating real-time electricity spot prices from the \href{https://www.nordpoolgroup.com/en/market-data12/Dayahead/Area-Prices/LT/Daily/?view=table}{Nord Pool API} to optimize energy consumption for heavy-duty electric trucks.
+                \item Implemented the \href{https://www.openchargealliance.org/}{OCPP} protocol for hardware communication, leveraging Spring Boot and AWS for a scalable backend architecture.
+                \item Spring Boot \cpshalf AWS \cpshalf MySQL \cpshalf \href{https://www.openchargealliance.org/}{OCPP} \cpshalf \href{https://www.nordpoolgroup.com/en/market-data12/Dayahead/Area-Prices/LT/Daily/?view=table}{Nord Pool API} 
+            \end{itemize}
+            \divider
+
+            \cvevent{Teacher Assistant }{| KTH Royal Institute of Technology}{August 2021 -- March 2022}{Stockholm, Sweden}
+            \begin{itemize}
+                \item \href{https://www.kth.se/social/course/DM1595/}{\textbf{DM1595} Program Development for Interactive Media}, HT21.
+                \item \href{https://www.kth.se/student/kurser/kurs/DH2642?l=en}{\textbf{DH2642} Interaction Programming and the Dynamic Web}, HT21, VT22.
+                \item React \cpshalf Vue \cpshalf \href{https://firebase.google.com/}{Google Firebase} \cpshalf MVC architecture
+            \end{itemize}
+            \divider
+
+            \cvevent{Fullstack Developer Intern }{| \href{https://panprices.com/se-sv}{Panprices AB}}{May 2021 -- August 2021}{Stockholm, Sweden}
+            \begin{itemize}
+                \item Wrote a web crawler with Python to capture the price of the same product on different price comparison sites.
+                \item Python \cpshalf Django \cpshalf GCP \cpshalf \href{https://www.crummy.com/software/BeautifulSoup/bs4/doc/}{Beautiful Soup} 
+            \end{itemize}
+            \divider
+            
+            \cvevent{Software Engineer Intern }{| \href{https://www.thunisoft.com/}{THUNSOFT}}{September 2019 -- December 2019}{Dalian, China}
+            \begin{itemize}
+                \item Tested Docker and Kubernetes packaging and unpacking shell scripts to improve the deployment process.
+                \item Docker \cpshalf Kubernetes \cpshalf Vue \cpshalf Linux
+            \end{itemize}
+        % ----- EXPERIENCE -----
+        \divider
+        
+        % ----- CERTIFICATION -----
+        \cvsection{Certifications}
+        \begin{figure}[htbp]
+            \left
+            \begin{minipage}[b]{0.1\linewidth}
+              \href{https://www.credly.com/badges/9e310ec8-074f-4e3a-b54a-6e15df25a6bb/public_url}{\includegraphics[width=\linewidth]{DVA-C02.png}}
+              \caption*{DVA-C02}
+            \end{minipage}
+            \hfill
+            \begin{minipage}[b]{0.1\linewidth}
+            \href{https://www.credly.com/badges/45e5a742-d9b5-4e06-8e8a-9a17321428c9}{\includegraphics[width=\linewidth]{AIF-C01.png}}
+            \caption*{AIF-C01}
+            \end{minipage}  
+            \begin{minipage}[b]{0.1\linewidth}
+            \href{https://www.credly.com/badges/bbcabec2-859f-4db1-a949-77a5e4929a2b/public_url}{\includegraphics[width=\linewidth]{CLD.png}}
+            \caption*{CLF-C01}
+            \end{minipage}           
+        \end{figure}
+
+        % ----- CERTIFICATION -----
+        
+        % ----- EDUCATION -----
+        \cvsection{Education}
+            \cvevent{MSc Software Engineering of Distributed Systems }{| \href{https://www.kth.se/en}{KTH Royal Institute of Technology}}{08/2020 -- 06/2022}{Stockholm, Sweden}
+            \begin{itemize}
+                \item GPA: A
+                \item Click me: \href{https://kth.diva-portal.org/smash/get/diva2:1707576/FULLTEXT01.pdf}{Development of a charging management system for heavy-duty trucks}
+            \end{itemize}
+            \divider
+            
+            \cvevent{BSc Software Engineering }{| \href{https://en.dlut.edu.cn/}{Dalian University of Technology}}{09/2016 -- 06/2020}{Dalian, China}
+            \begin{itemize}
+                \item GPA: 86/100
+                \item Thesis: \href{https://blog.csdn.net/SunXiaoying2016/article/details/145464809?spm=1001.2014.3001.5502}{Research and Implement on Fast Hybrid Multi-Frame Matching Algorithm}
+            \end{itemize}
+        % ----- EDUCATION -----
+
+    \end{paracol}
+\end{document}
