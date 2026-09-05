@@ -35,10 +35,8 @@
 \usepackage{setspace}
 
 
-\usepackage[rm]{roboto}
-\usepackage[defaultsans]{lato}
-% \usepackage{sourcesanspro}
-\renewcommand{\familydefault}{\sfdefault}
+% Booking.com typography: use Nunito Sans throughout.
+\usepackage[mainfont,lining,tabular]{nunito}
 
 
 % Fork: Change the color codes to test your personal variant on any mode
@@ -62,10 +60,11 @@
 \pagecolor{BackgroundColor}
 
 % Change some fonts, if necessary
-\renewcommand{\namefont}{\Huge\rmfamily\bfseries}
-\renewcommand{\personalinfofont}{\small\bfseries}
-\renewcommand{\cvsectionfont}{\LARGE\rmfamily\bfseries}
-\renewcommand{\cvsubsectionfont}{\large\bfseries}
+\renewcommand{\namefont}{\Huge\fontseries{eb}\selectfont}
+\renewcommand{\taglinefont}{\large\fontseries{sb}\selectfont}
+\renewcommand{\personalinfofont}{\small\fontseries{sb}\selectfont}
+\renewcommand{\cvsectionfont}{\LARGE\fontseries{eb}\selectfont}
+\renewcommand{\cvsubsectionfont}{\large\fontseries{sb}\selectfont}
 
 
 
@@ -85,6 +84,7 @@
 }
 
 \begin{document}
+\fontsize{9.5pt}{10.9pt}\selectfont
 % Keep references clickable without PDF link-border boxes.
 % Blue link text provides a clean, consistent visual cue in print and on screen.
 \hypersetup{
@@ -186,9 +186,9 @@
 
         % ----- SKILLS -----
         \cvsection{Technical Skills}
-        {\small
+        {\fontsize{9pt}{10.3pt}\selectfont
         \renewcommand{\arraystretch}{1.16}
-        \begin{tabularx}{\linewidth}{@{}>{\bfseries\raggedright\arraybackslash}p{3.45cm}@{\hspace{0.45em}}>{\raggedright\arraybackslash}X@{}}
+        \begin{tabularx}{\linewidth}{@{}>{\fontseries{sb}\selectfont\raggedright\arraybackslash}p{3.45cm}@{\hspace{0.45em}}>{\raggedright\arraybackslash}X@{}}
         Certifications: &
         \href{https://www.credly.com/badges/9e310ec8-074f-4e3a-b54a-6e15df25a6bb/public_url}{AWS Certified Developer -- Associate},
         \href{https://www.credly.com/badges/45e5a742-d9b5-4e06-8e8a-9a17321428c9}{AWS Certified AI Practitioner},
@@ -207,9 +207,10 @@
         \cvsection{Work Experience}
         \cvevent{Software Engineer}{| \href{https://www.booking.com/}{Booking.com}}{Nov 2024 -- Present}{Amsterdam, Netherlands}
             \begin{itemize}
-                \item \textbf{Reservation Platform Modernization}: Replaced legacy accommodation-modification flows with three scalable workflows using AWS Lambda, Step Functions, and CloudFormation; migrated 20 MySQL queries to ReadAPI with zero downtime, enabling DMA compliance and decommissioning legacy data-access paths.
-                \item \textbf{AI Engineering}: Built reusable skills and agents with Codex and Claude; used Slack and GitLab bots to automate engineering workflows.
-                \item \textbf{Reliability \& Production Ownership}: Built Grafana and CloudWatch dashboards and improved alerting for real-time monitoring; investigated and resolved customer-impacting incidents during the on-call rotation.
+                \item \textbf{AI Enablement \& Knowledge Sharing}: Won a GenAI hackathon track with an AutoGenKit tool that automates SonarQube remediation. Built reusable Codex and Claude skills and agents, including Slack and GitLab bot workflows.
+                \item \textbf{Platform Modernization}: Built modern reservation workflows with AWS Lambda, Step Functions, and CloudFormation to replace legacy services. Led API and order-storage changes from integration testing through staged production rollout.
+                \item \textbf{Data Migration \& Decommissioning}: Owned 19 legacy query migrations and enabled 10 across 15 service roles. Mapped dependencies for 12 legacy endpoints, authored four modernization plans, and retired obsolete endpoints, database tables, and scheduled jobs.
+                \item \textbf{Reliability \& Production Ownership}: Improved production reliability through Grafana and CloudWatch dashboards, alert tuning, and on-call resolution of customer-impacting incidents.
             \end{itemize}
             \medskip
 
