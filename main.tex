@@ -95,7 +95,7 @@
 }
 
     \name{Xiaoying Sun}
-    \tagline{Software Engineer}
+    \tagline{Software Engineer | Distributed Systems, Cloud \& Reliability}
     %% You can add multiple photos on the left or right
     % \photoL{3cm}{xiao}
     
@@ -176,40 +176,29 @@
         % \switchcolumn
         
         % ----- ABOUT ME -----
-        \cvsection{Impact Focus}
-            \begin{quote}
-                Results-driven Software Engineer with 4+ years of experience building scalable distributed systems at Booking.com, Klarna, and Shell.
-                AWS Certified Developer with expertise in Java, Python, and Cloud-native architectures.
+        \cvsection{Professional Summary}
+            \begin{quote}\normalsize
+                Software Engineer with 4+ years of experience building and operating distributed, cloud-native systems across travel, fintech, and EV charging.
+                Strong in Java, Python, AWS, service integrations, production reliability, and observability, with an international track record.
             \end{quote}
+        \smallskip
         % ----- ABOUT ME -----
-        \divider
 
         % ----- SKILLS -----
-        \cvsection{Tech Skills}
+        \cvsection{Technical Skills}
         {\small
-        \textbf{Programming Languages}:
-        \cvtag{Python}\cvtag{Java}\cvtag{TypeScript}\cvtag{C++}\cvtag{Perl}\cvtag{Scala}
-
-        \smallskip
-        \textbf{Cloud}: 
-        \cvtag{AWS Lambda}\cvtag{Step Functions}\cvtag{CloudFormation}\cvtag{CloudWatch}
-        \cvtag{Docker}\cvtag{Kubernetes}\cvtag{GCP}
-
-        \smallskip
-        \textbf{Frameworks \& Observability}:
-        \cvtag{Spring Boot}\cvtag{React}\cvtag{Django}\cvtag{Vue} \cvtag{Linux}
-        \cvtag{Datadog}\cvtag{Grafana}\cvtag{Kibana}\cvtag{Loki}\cvtag{Honeycomb}
-
-        \smallskip
-        \textbf{Databases}:
-        \cvtag{MySQL}\cvtag{Kafka}\cvtag{AWS DynamoDB}\cvtag{ElasticSearch}
-        \cvtag{Snowflake}\cvtag{CockroachDB}\cvtag{Google Firebase}
-
-        \smallskip
-        \textbf{Certifications}:
-        \href{https://www.credly.com/badges/9e310ec8-074f-4e3a-b54a-6e15df25a6bb/public_url}{\cvtag{AWS Certified Developer (Associate)}}
-        \href{https://www.credly.com/badges/45e5a742-d9b5-4e06-8e8a-9a17321428c9}{\cvtag{AWS AI Practitioner}}
-        \href{https://www.credly.com/badges/bbcabec2-859f-4db1-a949-77a5e4929a2b/public_url}{\cvtag{AWS Cloud Practitioner}}
+        \renewcommand{\arraystretch}{1.16}
+        \begin{tabularx}{\linewidth}{@{}>{\bfseries\raggedright\arraybackslash}p{3.45cm}@{\hspace{0.45em}}>{\raggedright\arraybackslash}X@{}}
+        Certifications: &
+        \href{https://www.credly.com/badges/9e310ec8-074f-4e3a-b54a-6e15df25a6bb/public_url}{AWS Certified Developer -- Associate},
+        \href{https://www.credly.com/badges/45e5a742-d9b5-4e06-8e8a-9a17321428c9}{AWS Certified AI Practitioner},
+        \href{https://www.credly.com/badges/bbcabec2-859f-4db1-a949-77a5e4929a2b/public_url}{AWS Certified Cloud Practitioner} \\
+        Backend \& Integration: & Java, Python, Scala, Perl, Spring Boot, Django, REST APIs \\
+        Cloud \& Platform: & AWS, Lambda, Step Functions, CloudFormation, Docker, Kubernetes \\
+        Data \& Messaging: & MySQL, Amazon DynamoDB, Kafka, Elasticsearch, Snowflake, CockroachDB \\
+        Observability: & Grafana, CloudWatch, Datadog, Kibana, Loki, Honeycomb \\
+        Domain Experience: & OCPP, CPMS, EV Charging, Nord Pool
+        \end{tabularx}
         }
 
         % ----- SKILLS -----
@@ -218,28 +207,28 @@
         \cvsection{Work Experience}
         \cvevent{Software Engineer}{| \href{https://www.booking.com/}{Booking.com}}{Nov 2024 -- Present}{Amsterdam, Netherlands}
             \begin{itemize}
-                \item \textbf{Reservation Platform Modernization}: Modernized core reservation services to support new booking and accommodation-change flows, improving scalability, production readiness, and cross-service data consistency.
-                \item \textbf{Reliability \& Production Ownership}: Improved service health through on-call support, incident follow-ups, monitoring dashboards, alert cleanup, and cross-team investigations for customer-impacting reservation issues.
-                \item \textbf{Security, Compliance \& Legacy Cleanup}: Strengthened service-to-service authorization, migrated legacy data access paths for compliance, and decommissioned obsolete jobs and endpoints to reduce operational risk.
+                \item \textbf{Reservation Platform Modernization}: Replaced legacy accommodation-modification flows with three scalable workflows using AWS Lambda, Step Functions, and CloudFormation; migrated 20 MySQL queries to ReadAPI with zero downtime, enabling DMA compliance and decommissioning legacy data-access paths.
+                \item \textbf{AI Engineering}: Built reusable skills and agents with Codex and Claude; used Slack and GitLab bots to automate engineering workflows.
+                \item \textbf{Reliability \& Production Ownership}: Built Grafana and CloudWatch dashboards and improved alerting for real-time monitoring; investigated and resolved customer-impacting incidents during the on-call rotation.
             \end{itemize}
             \medskip
 
-            \cvevent{Site Reliability Engineer}{| \href{https://shellrecharge.com/en-gb}{Shell Recharge Solutions}}{June 2023 -- Oct 2024}{Amsterdam, Netherlands}
+            \cvevent{Site Reliability Engineer}{| \href{https://shellrecharge.com/en-gb}{Shell Recharge Solutions}}{Jun 2023 -- Oct 2024}{Amsterdam, Netherlands}
             \begin{itemize}
-                \item \textbf{Test Automation}: Engineered an E2E automation framework integrating OCPP simulators and 3rd-party APIs to validate payment flows across Mobile, RFID, Credit Card, and QR code.
+                \item \textbf{Test Automation}: Engineered an E2E automation framework integrating OCPP simulators and third-party APIs to validate payment flows across Mobile, RFID, Credit Card, and QR code.
                 \item \textbf{Payment Process Optimization}: Optimized credit card processing to dynamically handle secondary charges, preventing premature session drops and securing full revenue capture.
                 \item \textbf{Cross-Functional \& Field Leadership}: Aligned technical requirements across EU and US teams and conducted on-site hardware testing to ensure software-to-charger reliability.
             \end{itemize}
             \medskip
 
-            \cvevent{Backend Developer }{| \href{https://www.klarna.com/se/}{Klarna}}{June 2022 -- June 2023}{Stockholm, Sweden}
+            \cvevent{Backend Developer}{| \href{https://www.klarna.com/se/}{Klarna}}{Jun 2022 -- Jun 2023}{Stockholm, Sweden}
             \begin{itemize}
                 \item \textbf{Revenue Protection}: Engineered dynamic loan-term adjustment logic for high-risk accounts, accelerating debt collection and reducing overall credit loss.
-                \item \textbf{System Integration}: Integrated the Papaya third-party ledger service using AWS Document Storage to securely process affiliate loan requests with high transactional integrity.
+                \item \textbf{System Integration}: Integrated the Papaya third-party ledger service using Amazon DocumentDB to securely process affiliate loan requests with high transactional integrity.
             \end{itemize}
             \medskip
 
-            \cvevent{{Thesis Worker }}{| \href{https://www.scania.com/}{Scania}}{January 2022 -- June 2022}{Södertälje, Sweden}
+            \cvevent{Master's Thesis Engineer}{| \href{https://www.scania.com/}{Scania}}{Jan 2022 -- Jun 2022}{Södertälje, Sweden}
             \begin{itemize}
                 \item \textbf{Thesis}: Built a cloud-native Smart Charging Management System (CPMS) using Spring Boot, AWS, and the \href{https://www.openchargealliance.org/}{OCPP} protocol; engineered greedy algorithms integrating real-time \href{https://www.nordpoolgroup.com/en/market-data12/Dayahead/Area-Prices/LT/Daily/?view=table}{Nord Pool} electricity prices to optimize energy consumption for heavy-duty electric trucks.
             \end{itemize}
@@ -249,14 +238,14 @@
 
         % ----- EDUCATION -----
         \cvsection{Education}
-            \cvevent{MSc Software Engineering of Distributed Systems }{| \href{https://www.kth.se/en}{KTH Royal Institute of Technology}}{08/2020 -- 06/2022}{Stockholm, Sweden}
+            \cvevent{MSc Software Engineering of Distributed Systems}{| \href{https://www.kth.se/en}{KTH Royal Institute of Technology}}{Aug 2020 -- Jun 2022}{Stockholm, Sweden}
             \begin{itemize}
                 \item Thesis: \href{https://kth.diva-portal.org/smash/get/diva2:1707576/FULLTEXT01.pdf}{Development of a charging management system for heavy-duty trucks}
             \end{itemize}
             
-            \cvevent{BSc Software Engineering }{| \href{https://en.dlut.edu.cn/}{Dalian University of Technology}}{09/2016 -- 06/2020}{Dalian, China}
+            \cvevent{BSc Software Engineering}{| \href{https://en.dlut.edu.cn/}{Dalian University of Technology}}{Sep 2016 -- Jun 2020}{Dalian, China}
             \begin{itemize}
-                \item Thesis: \href{https://blog.csdn.net/SunXiaoying2016/article/details/145464809?spm=1001.2014.3001.5502}{Research and Implement on Fast Hybrid Multi-Frame Matching Algorithm}
+                \item Thesis: \href{https://blog.csdn.net/SunXiaoying2016/article/details/145464809?spm=1001.2014.3001.5502}{Research and Implementation of a Fast Hybrid Multi-Frame Matching Algorithm}
             \end{itemize}
         % ----- EDUCATION -----
 
