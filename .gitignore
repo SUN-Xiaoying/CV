@@ -1,0 +1,45 @@
+# IDE and local agent configuration
+.idea/
+.run/
+.agents/
+.claude/
+.codex/
+
+# macOS metadata
+.DS_Store
+
+# LaTeX build directories
+out/
+output/
+tmp/
+
+# LaTeX generated files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.glg
+*.glo
+*.gls
+*.idx
+*.ilg
+*.ind
+*.ist
+*.lof
+*.log
+*.lot
+*.nav
+*.out
+*.run.xml
+*.snm
+*.synctex.gz
+*.toc
+*.vrb
+*.xdv
+
+# Temporary editor files
+*~
+*.bak
+*.swp

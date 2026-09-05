@@ -2,6 +2,8 @@
 
 %% If you need to pass whatever options to xcolor
 \PassOptionsToPackage{dvipsnames}{xcolor}
+% Enable clean colored hyperlinks when hyperref is loaded by the PDF/A package.
+\PassOptionsToPackage{colorlinks}{hyperref}
 
 %% If you are using \orcid or academicons
 %% icons, make sure you have the academicons
@@ -17,6 +19,11 @@
 % \documentclass[10pt,a4paper,darkmode]{altacv}
 
 \documentclass[9pt,a4paper,ragged2e,withhyper]{altacv}
+
+% Declare transitive class dependencies explicitly so IDE inspections can resolve
+% color and hyperlink commands used directly in this document.
+\usepackage{xcolor}
+\usepackage{hyperref}
 
 % Change the page layout if you need to
 \geometry{left=1.2cm,right=1.2cm,top=1cm,bottom=1cm,columnsep=0.75cm}
@@ -36,12 +43,12 @@
 
 % Fork: Change the color codes to test your personal variant on any mode
 
-\definecolor{PrimaryColor}{HTML}{1A365D}   % 深蓝色，更专业
-\definecolor{SecondaryColor}{HTML}{2B6CB0} % 稍浅的蓝色
-\definecolor{ThirdColor}{HTML}{E2E8F0}     % 用于分隔线的浅灰色
-\definecolor{BodyColor}{HTML}{2D3748}      % 正文深灰色
-\definecolor{EmphasisColor}{HTML}{2C5282}  % 强调色
-\definecolor{BackgroundColor}{HTML}{FFFFFF} % 背景建议纯白，方便打印和ATS识别
+\definecolor{PrimaryColor}{HTML}{003B95}    % Booking.com Action Blue: headings and name
+\definecolor{SecondaryColor}{HTML}{006CE4}  % Booking.com Blue: links, icons, and highlights
+\definecolor{ThirdColor}{HTML}{57A6F4}      % Lighter data blue: section rules
+\definecolor{BodyColor}{HTML}{383838}       % Neutral dark: readable body copy
+\definecolor{EmphasisColor}{HTML}{003B95}   % Action Blue: roles and emphasized text
+\definecolor{BackgroundColor}{HTML}{FFFFFF} % White background for print and ATS readability
 
 
 \colorlet{name}{PrimaryColor}
@@ -81,7 +88,14 @@
 %% \addbibresource{sample.bib}
 
 \begin{document}
-\hypersetup{hidelinks=false, colorlinks=false, urlbordercolor=SecondaryColor, pdfborderstyle={/S/U/W 1}}
+% Keep references clickable without PDF link-border boxes.
+% Blue link text provides a clean, consistent visual cue in print and on screen.
+\hypersetup{
+  linkcolor=SecondaryColor,
+  urlcolor=SecondaryColor,
+  citecolor=SecondaryColor,
+  pdfborder={0 0 0}
+}
 
     \name{Xiaoying Sun}
     \tagline{Software Engineer}
@@ -90,7 +104,7 @@
     
     \personalinfo{
         \email{xiaoyingsun523@gmail.com}\smallskip
-        \phone{+31 685301165} \location{Amsterdam, Netherlands}
+        \printinfo{\faPhone}{+31 685301165}[tel:+31685301165] \location{Amsterdam, Netherlands}
         \linkedin{xiaoying-sun} \github{SUN-Xiaoying}
         % \quad \dev{johnDoe}
 
@@ -98,11 +112,11 @@
         %\medium{nicolasomar}
         %% You MUST add the academicons option to \documentclass, then compile with LuaLaTeX or XeLaTeX, if you want to use \orcid or other academicons commands.
         % \orcid{0000-0000-0000-0000}
-        %% You can add your own arbtrary detail with
+        %% You can add your own arbitrary detail with
         %% \printinfo{symbol}{detail}[optional hyperlink prefix]
         % \printinfo{\faPaw}{Hey ho!}[https://example.com/]
         %% Or you can declare your own field with
-        %% \NewInfoFiled{fieldname}{symbol}[optional hyperlink prefix] and use it:
+        %% \NewInfoField{fieldname}{symbol}[optional hyperlink prefix] and use it:
         % \NewInfoField{gitlab}{\faGitlab}[https://gitlab.com/]
         % \gitlab{your_id}
     }
@@ -145,7 +159,7 @@
         
         % \cvsection{A Day of My Life}
         
-        % Adapted from @Jake's answer from http://tex.stackexchange.com/a/82729/226
+        % Adapted from @Jake's answer at https://tex.stackexchange.com/a/82729/226
         % \wheelchart{outer radius}{inner radius}{
         % comma-separated list of value/text width/color/detail}
         % \wheelchart{1.5cm}{0.5cm}{%
@@ -167,7 +181,8 @@
         % ----- ABOUT ME -----
         \cvsection{Impact Focus}
             \begin{quote}
-                Results-driven Software Engineer with 4+ years of experience building scalable distributed systems at Booking.com, Klarna, and Shell. AWS Certified Developer with expertise in Java, Python, and Cloud-native architectures.
+                Results-driven Software Engineer with 4+ years of experience building scalable distributed systems at Booking.com, Klarna, and Shell.
+                AWS Certified Developer with expertise in Java, Python, and Cloud-native architectures.
             \end{quote}
         % ----- ABOUT ME -----
         \divider
@@ -206,9 +221,9 @@
         \cvsection{Work Experience}
         \cvevent{Software Engineer}{| \href{https://www.booking.com/}{Booking.com}}{Nov 2024 -- Present}{Amsterdam, Netherlands}
             \begin{itemize}
-                \item \textbf{System Modernization}: Architected and deployed 3 scalable accommodation modification actions utilizing AWS Lambda, Step Functions, and CloudFormation to enable on-demand scalability.
-                \item \textbf{Service Health \& Reliability}: Built Grafana and CloudWatch dashboards for real-time system monitoring; resolved live issues as part of the on-call rotation for ARB services.
-                \item \textbf{Compliance \& Data Privacy}: Migrated 20 legacy MySQL queries to ReadAPI with zero downtime, ensuring DMA compliance and safely decommissioning legacy storage.      
+                \item \textbf{Reservation Platform Modernization}: Modernized core reservation services to support new booking and accommodation-change flows, improving scalability, production readiness, and cross-service data consistency.
+                \item \textbf{Reliability \& Production Ownership}: Improved service health through on-call support, incident follow-ups, monitoring dashboards, alert cleanup, and cross-team investigations for customer-impacting reservation issues.
+                \item \textbf{Security, Compliance \& Legacy Cleanup}: Strengthened service-to-service authorization, migrated legacy data access paths for compliance, and decommissioned obsolete jobs and endpoints to reduce operational risk.
             \end{itemize}
             \medskip
 
@@ -216,14 +231,14 @@
             \begin{itemize}
                 \item \textbf{Test Automation}: Engineered an E2E automation framework integrating OCPP simulators and 3rd-party APIs to validate payment flows across Mobile, RFID, Credit Card, and QR code.
                 \item \textbf{Payment Process Optimization}: Optimized credit card processing to dynamically handle secondary charges, preventing premature session drops and securing full revenue capture.
-                \item \textbf{Cross-Functional \& Field Leadership} Aligned technical requirements across EU and US teams and conducted on-site hardware testing to ensure software-to-charger reliability.
+                \item \textbf{Cross-Functional \& Field Leadership}: Aligned technical requirements across EU and US teams and conducted on-site hardware testing to ensure software-to-charger reliability.
             \end{itemize}
             \medskip
 
             \cvevent{Backend Developer }{| \href{https://www.klarna.com/se/}{Klarna}}{June 2022 -- June 2023}{Stockholm, Sweden}
             \begin{itemize}
                 \item \textbf{Revenue Protection}: Engineered dynamic loan-term adjustment logic for high-risk accounts, accelerating debt collection and reducing overall credit loss.
-                \item \textbf{System Integration}:Integrated the Papaya third-party ledger service using AWS Document Storage to securely process affiliate loan requests with high transactional integrity.
+                \item \textbf{System Integration}: Integrated the Papaya third-party ledger service using AWS Document Storage to securely process affiliate loan requests with high transactional integrity.
             \end{itemize}
             \medskip
 

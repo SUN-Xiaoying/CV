@@ -86,7 +86,6 @@
 
 \if@withhyper
   \AtBeginDocument{%
-    \hypersetup{hidelinks}
     \urlstyle{same}
   }
 \fi
@@ -139,13 +138,14 @@
 \NewDocumentCommand{\printinfo}{m m o}{%
   \BeginAccSupp{method=escape,ActualText={#1:~#2}}
   \IfNoValueTF{#3}{%
-    \mbox{\utffriendlydetokenize{#2}\hspace{2em}}%
+    \mbox{\textcolor{accent}{\normalfont #1}~\utffriendlydetokenize{#2}\hspace{2em}}%
   }{%
      \if@withhyper%
-      \mbox{\href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
+      \mbox{\textcolor{accent}{\normalfont #1}~
+      \href{#3}{\utffriendlydetokenize{#2}}\hspace{2em}}
      \else%
        \ClassWarning{Please specify [withhyper] option to enable hyperlinks. Printing out full hyperlink prefix #1 for now.}%
-      \mbox{{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
+      \mbox{\textcolor{accent}{\normalfont #1}~{\utffriendlydetokenize{#3#2}}\hspace{2em}}%
      \fi%
   }%
   \EndAccSupp{}
@@ -284,11 +284,11 @@
 % v1.1.4: fixes inconsistent font size
 % Fork: structure modified to include change title, company name, start/end dates and work location (only a string)
 \newcommand{\cvevent}[4]{%
-  {\large\bfseries\color{emphasis}#1}
-  \ifstrequal{#2}{}{}{\large\bfseries{\color{accent}#2}}
+  {\large\color{emphasis}#1}
+  \ifstrequal{#2}{}{}{\large{\color{accent}#2}}
   \par\medskip\normalsize
-  \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\color{emphasis}#3}}}
-  \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\color{emphasis}#4}}}\par
+  \ifstrequal{#3}{}{}{{\small\makebox[0.5\linewidth][l]{\color{accent}\faCalendar\color{emphasis}~#3}}}
+  \ifstrequal{#4}{}{}{{\small\makebox[0.5\linewidth][l]{\color{accent}\faMapMarker\color{emphasis}~#4}}}\par
   \medskip\normalsize
 }
 
